@@ -76,14 +76,14 @@ install_simple_firewall() {
     mount -o remount,rw /
     mkdir -p "$SIMPLE_FIREWALL_DIR"
     mkdir -p "$SIMPLE_FIREWALL_SYSTEMD_DIR"
-    wget -O "$SIMPLE_FIREWALL_DIR/simplefirewall.sh" https://raw.gitmirror.com/$GITUSER/webui/$GITTREE/simplefirewall/simplefirewall.sh
-   wget -O "$SIMPLE_FIREWALL_DIR/ttl-override" https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simplefirewall/ttl-override
-    wget -O "$SIMPLE_FIREWALL_DIR/ttlvalue" https://raw.gitmirror.com/$GITUSER/webui/$GITTREE/simplefirewall/ttlvalue
+    wget -O "$SIMPLE_FIREWALL_DIR/simplefirewall.sh" https://raw.gitmirror.com/$GITUSER/webui-500/$GITTREE/simplefirewall/simplefirewall.sh
+   wget -O "$SIMPLE_FIREWALL_DIR/ttl-override" https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simplefirewall/ttl-override
+    wget -O "$SIMPLE_FIREWALL_DIR/ttlvalue" https://raw.gitmirror.com/$GITUSER/webui-500/$GITTREE/simplefirewall/ttlvalue
 	chmod 666 $SIMPLE_FIREWALL_DIR/ttlvalue
     chmod +x "$SIMPLE_FIREWALL_DIR/simplefirewall.sh"
     chmod +x "$SIMPLE_FIREWALL_DIR/ttl-override"	
-    wget -O "$SIMPLE_FIREWALL_SYSTEMD_DIR/simplefirewall.service" https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simplefirewall/systemd/simplefirewall.service
-    wget -O "$SIMPLE_FIREWALL_SYSTEMD_DIR/ttl-override.service" https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simplefirewall/systemd/ttl-override.service
+    wget -O "$SIMPLE_FIREWALL_SYSTEMD_DIR/simplefirewall.service" https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simplefirewall/systemd/simplefirewall.service
+    wget -O "$SIMPLE_FIREWALL_SYSTEMD_DIR/ttl-override.service" https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simplefirewall/systemd/ttl-override.service
     cp -rf $SIMPLE_FIREWALL_SYSTEMD_DIR/* /lib/systemd/system
     ln -sf "/lib/systemd/system/simplefirewall.service" "/lib/systemd/system/multi-user.target.wants/"
     ln -sf "/lib/systemd/system/ttl-override.service" "/lib/systemd/system/multi-user.target.wants/"
