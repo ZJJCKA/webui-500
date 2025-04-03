@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define constants
-GITUSER="iamromulan"
-GITTREE="development"
+GITUSER="ZJJCKA"
+GITTREE="main"
 DIR_NAME="simplefirewall"
 SERVICE_FILE="/lib/systemd/system/install_simplefirewall.service"
 SERVICE_NAME="install_simplefirewall"
@@ -41,8 +41,8 @@ EOF
 cat <<EOF > "$TMP_SCRIPT"
 #!/bin/bash
 
-GITUSER="iamromulan"
-GITTREE="development"
+GITUSER="ZJJCKA"
+GITTREE="main"
 SIMPLE_FIREWALL_DIR="/usrdata/simplefirewall"
 SIMPLE_FIREWALL_SCRIPT="$SIMPLE_FIREWALL_DIR/simplefirewall.sh"
 SIMPLE_FIREWALL_SYSTEMD_DIR="$SIMPLE_FIREWALL_DIR/systemd"
@@ -76,14 +76,14 @@ install_simple_firewall() {
     mount -o remount,rw /
     mkdir -p "$SIMPLE_FIREWALL_DIR"
     mkdir -p "$SIMPLE_FIREWALL_SYSTEMD_DIR"
-    wget --no-check-certificate -O "$SIMPLE_FIREWALL_DIR/simplefirewall.sh" http://gitea.hapyle.work:33000/taotao/webui/raw/development/simplefirewall/simplefirewall.sh
-    wget --no-check-certificate -O "$SIMPLE_FIREWALL_DIR/ttl-override" http://gitea.hapyle.work:33000/taotao/webui/raw/development/simplefirewall/ttl-override
-    wget --no-check-certificate -O "$SIMPLE_FIREWALL_DIR/ttlvalue" http://gitea.hapyle.work:33000/taotao/webui/raw/development/simplefirewall/ttlvalue
+    wget -O "$SIMPLE_FIREWALL_DIR/simplefirewall.sh" https://raw.gitmirror.com/$GITUSER/webui/$GITTREE/simplefirewall/simplefirewall.sh
+   wget -O "$SIMPLE_FIREWALL_DIR/ttl-override" https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simplefirewall/ttl-override
+    wget -O "$SIMPLE_FIREWALL_DIR/ttlvalue" https://raw.gitmirror.com/$GITUSER/webui/$GITTREE/simplefirewall/ttlvalue
 	chmod 666 $SIMPLE_FIREWALL_DIR/ttlvalue
     chmod +x "$SIMPLE_FIREWALL_DIR/simplefirewall.sh"
     chmod +x "$SIMPLE_FIREWALL_DIR/ttl-override"	
-    wget --no-check-certificate -O "$SIMPLE_FIREWALL_SYSTEMD_DIR/simplefirewall.service" http://gitea.hapyle.work:33000/taotao/webui/raw/development/simplefirewall/systemd/simplefirewall.service
-    wget --no-check-certificate -O "$SIMPLE_FIREWALL_SYSTEMD_DIR/ttl-override.service" http://gitea.hapyle.work:33000/taotao/webui/raw/development/simplefirewall/systemd/ttl-override.service
+    wget -O "$SIMPLE_FIREWALL_SYSTEMD_DIR/simplefirewall.service" https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simplefirewall/systemd/simplefirewall.service
+    wget -O "$SIMPLE_FIREWALL_SYSTEMD_DIR/ttl-override.service" https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simplefirewall/systemd/ttl-override.service
     cp -rf $SIMPLE_FIREWALL_SYSTEMD_DIR/* /lib/systemd/system
     ln -sf "/lib/systemd/system/simplefirewall.service" "/lib/systemd/system/multi-user.target.wants/"
     ln -sf "/lib/systemd/system/ttl-override.service" "/lib/systemd/system/multi-user.target.wants/"

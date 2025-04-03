@@ -1,10 +1,8 @@
 #!/bin/sh
 # Define toolkit paths
 export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/opt/bin:/opt/sbin:/usrdata/root/bin
-GITUSER="iamromulan"
-GITTREE="development"
-GITMAINTREE="main"
-GITDEVTREE="development"
+GITUSER="ZJJCKA"
+GITTREE="main"
 TMP_DIR="/tmp"
 USRDATA_DIR="/usrdata"
 SOCAT_AT_DIR="/usrdata/socat-at-bridge"
@@ -104,7 +102,7 @@ ensure_entware_installed() {
 	remount_rw
     if [ ! -f "/opt/bin/opkg" ]; then
         echo -e "\e[1;32mInstalling Entware/OPKG\e[0m"
-        cd /tmp && wget --no-check-certificate -O installentware.sh "http://gitea.hapyle.work:33000/taotao/webui/raw/development/installentware.sh" && chmod +x installentware.sh && ./installentware.sh
+        cd /tmp && wget -O installentware.sh "https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/installentware.sh" && chmod +x installentware.sh && ./installentware.sh
         if [ "$?" -ne 0 ]; then
             echo -e "\e[1;31mEntware/OPKG installation failed. Please check your internet connection or the repository URL.\e[0m"
             exit 1
@@ -303,8 +301,8 @@ set_simpleadmin_passwd(){
 	ensure_entware_installed
  	opkg update
   	opkg install libaprutil
-	wget --no-check-certificate -O /usrdata/root/bin/htpasswd http://gitea.hapyle.work:33000/taotao/webui/raw/development/simpleadmin/htpasswd && chmod +x /usrdata/root/bin/htpasswd
-	wget --no-check-certificate -O /usrdata/root/bin/simplepasswd http://gitea.hapyle.work:33000/taotao/webui/raw/development/simpleadmin/simplepasswd && chmod +x /usrdata/root/bin/simplepasswd
+	wget -O /usrdata/root/bin/htpasswd https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/htpasswd && chmod +x /usrdata/root/bin/htpasswd
+	wget -O /usrdata/root/bin/simplepasswd https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/simplepasswd && chmod +x /usrdata/root/bin/simplepasswd
 	echo -e "\e[1;32mTo change your simpleadmin (admin) password in the future...\e[0m"
 	echo -e "\e[1;32mIn the console type simplepasswd and press enter\e[0m"
 	/usrdata/root/bin/simplepasswd
@@ -336,20 +334,20 @@ install_simple_admin() {
 			echo -e "\e[1;31m2) Installing simpleadmin from the development test branch\e[0m"
 			mkdir /usrdata/simpleupdates > /dev/null 2>&1
 		    mkdir /usrdata/simpleupdates/scripts > /dev/null 2>&1
-		    wget --no-check-certificate -O /usrdata/simpleupdates/scripts/update_socat-at-bridge.sh http://gitea.hapyle.work:33000/taotao/webui/raw/development/simpleupdates/scripts/update_socat-at-bridge.sh && chmod +x /usrdata/simpleupdates/scripts/update_socat-at-bridge.sh
+		    wget -O /usrdata/simpleupdates/scripts/update_socat-at-bridge.sh https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleupdates/scripts/update_socat-at-bridge.sh && chmod +x /usrdata/simpleupdates/scripts/update_socat-at-bridge.sh
 		    echo -e "\e[1;32mInstalling/updating dependency: socat-at-bridge\e[0m"
 			echo -e "\e[1;32mPlease Wait....\e[0m"
 			/usrdata/simpleupdates/scripts/update_socat-at-bridge.sh
 			echo -e "\e[1;32m Dependency: socat-at-bridge has been updated/installed.\e[0m"
 			sleep 1
-		    wget --no-check-certificate -O /usrdata/simpleupdates/scripts/update_simplefirewall.sh http://gitea.hapyle.work:33000/taotao/webui/raw/development/simpleupdates/scripts/update_simplefirewall.sh && chmod +x /usrdata/simpleupdates/scripts/update_simplefirewall.sh
+		    wget -O /usrdata/simpleupdates/scripts/update_simplefirewall.sh https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleupdates/scripts/update_simplefirewall.sh && chmod +x /usrdata/simpleupdates/scripts/update_simplefirewall.sh
 		    echo -e "\e[1;32mInstalling/updating dependency: simplefirewall\e[0m"
 			echo -e "\e[1;32mPlease Wait....\e[0m"
 			/usrdata/simpleupdates/scripts/update_simplefirewall.sh
 			echo -e "\e[1;32m Dependency: simplefirewall has been updated/installed.\e[0m"
 			sleep 1
 			set_simpleadmin_passwd
-		    wget --no-check-certificate -O /usrdata/simpleupdates/scripts/update_simpleadmin.sh http://gitea.hapyle.work:33000/taotao/webui/raw/development/simpleupdates/scripts/update_simpleadmin.sh && chmod +x /usrdata/simpleupdates/scripts/update_simpleadmin.sh
+		    wget -O /usrdata/simpleupdates/scripts/update_simpleadmin.sh https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleupdates/scripts/update_simpleadmin.sh && chmod +x /usrdata/simpleupdates/scripts/update_simpleadmin.sh
 			echo -e "\e[1;32mInstalling/updating: Simpleadmin content\e[0m"
 			echo -e "\e[1;32mPlease Wait....\e[0m"
 			/usrdata/simpleupdates/scripts/update_simpleadmin.sh
@@ -488,7 +486,7 @@ echo -e "\e[1;31m2) Installing tailscale from the $GITTREE branch\e[0m"
 			ensure_entware_installed
 			mkdir /usrdata/simpleupdates > /dev/null 2>&1
 		    mkdir /usrdata/simpleupdates/scripts > /dev/null 2>&1
-		    wget --no-check-certificate -O /usrdata/simpleupdates/scripts/update_tailscale.sh http://gitea.hapyle.work:33000/taotao/webui/raw/development/simpleupdates/scripts/update_tailscale.sh && chmod +x /usrdata/simpleupdates/scripts/update_tailscale.sh
+		    wget -O /usrdata/simpleupdates/scripts/update_tailscale.sh https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleupdates/scripts/update_tailscale.sh && chmod +x /usrdata/simpleupdates/scripts/update_tailscale.sh
 		    echo -e "\e[1;32mInstalling/updating: Tailscale\e[0m"
 			echo -e "\e[1;32mPlease Wait....\e[0m"
 			remount_rw
@@ -514,8 +512,8 @@ configure_tailscale() {
         1)
 	remount_rw
 	cd /lib/systemd/system/
-	wget --no-check-certificate -O tailscale-webui.service http://gitea.hapyle.work:33000/taotao/webui/raw/development/tailscale/systemd/tailscale-webui.service
-  	wget --no-check-certificate -O tailscale-webui-trigger.service http://gitea.hapyle.work:33000/taotao/webui/raw/development/tailscale/systemd/tailscale-webui-trigger.service
+	wget -O tailscale-webui.service https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/main/tailscale/systemd/tailscale-webui.service
+  	wget -O tailscale-webui-trigger.service https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/main/tailscale/systemd/tailscale-webui-trigger.service
      	ln -sf /lib/systemd/system/tailscale-webui-trigger.service /lib/systemd/system/multi-user.target.wants/
      	systemctl daemon-reload
        	echo "Tailscale Web UI Enabled"
@@ -756,7 +754,7 @@ install_sshd() {
 	ensure_entware_installed
     mkdir /usrdata/simpleupdates > /dev/null 2>&1
 	mkdir /usrdata/simpleupdates/scripts > /dev/null 2>&1
-	wget --no-check-certificate -O /usrdata/simpleupdates/scripts/update_sshd.sh http://gitea.hapyle.work:33000/taotao/webui/raw/development/simpleupdates/scripts/update_sshd.sh && chmod +x /usrdata/simpleupdates/scripts/update_sshd.sh
+	wget -O /usrdata/simpleupdates/scripts/update_sshd.sh https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleupdates/scripts/update_sshd.sh && chmod +x /usrdata/simpleupdates/scripts/update_sshd.sh
 	echo -e "\e[1;32mInstalling/updating: SSHd\e[0m"
 	echo -e "\e[1;32mPlease Wait....\e[0m"
 	/usrdata/simpleupdates/scripts/update_sshd.sh
@@ -840,8 +838,8 @@ echo "                                      .=@@@@@-               "
 echo "                                           :+##+.            "
 
     echo -e "\e[92m"
-    echo "Welcome to iamromulan's RGMII Toolkit script for Quectel RMxxx Series modems!"
-    echo "Visit https://github.com/iamromulan for more!"
+    echo "欢迎使用小小通搬运出来的移远模块web控制台安装程序"
+    echo "感谢taotao对本webui的汉化"
     echo -e "\e[0m"
     echo "Select an option:"
     echo -e "\e[0m"
@@ -952,7 +950,7 @@ echo "                                           :+##+.            "
 			install_sshd
 			;;
 		14) 
-			echo -e "\e[1;32mGoodbye!\e[0m"
+			echo -e "\e[1;32m抬走下一位!\e[0m"
      	    break
             ;;    
     *)

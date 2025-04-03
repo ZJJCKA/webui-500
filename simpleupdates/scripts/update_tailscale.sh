@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define constants
-GITUSER="iamromulan"
-GITTREE="development"
+GITUSER="ZJJCKA"
+GITTREE="main"
 DIR_NAME="tailscale"
 SERVICE_FILE="/lib/systemd/system/install_tailscale.service"
 SERVICE_NAME="install_tailscale"
@@ -85,8 +85,8 @@ install_update_tailscale() {
         rm -rf /usrdata/tailscale_1.70.0_arm
         echo "Downloading systemd files..."
         cd "$TAILSCALE_SYSD_DIR"
-        wget --no-check-certificate http://gitea.hapyle.work:33000/taotao/webui/blob/development/tailscale/systemd/tailscaled.service
-        wget --no-check-certificate http://gitea.hapyle.work:33000/taotao/webui/blob/development/tailscale/systemd/tailscaled.defaults
+        wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/tailscale/systemd/tailscaled.service
+        wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/tailscale/systemd/tailscaled.defaults
         sleep 2s
         echo "Setting Permissions..."
         chmod +x "$TAILSCALE_DIR/tailscaled" "$TAILSCALE_DIR/tailscale"

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define constants
-GITUSER="iamromulan"
-GITTREE="development"
+GITUSER="ZJJCKA"
+GITTREE="main"
 DIR_NAME="socat-at-bridge"
 SERVICE_FILE="/lib/systemd/system/install_socat-at-bridge.service"
 SERVICE_NAME="install_socat-at-bridge"
@@ -39,8 +39,8 @@ EOF
 cat <<EOF > "$TMP_SCRIPT"
 #!/bin/bash
 
-GITUSER="iamromulan"
-GITTREE="development"
+GITUSER="ZJJCKA"
+GITTREE="main"
 SOCAT_AT_DIR="/usrdata/socat-at-bridge"
 SOCAT_AT_SYSD_DIR="/usrdata/socat-at-bridge/systemd_units"
 
@@ -85,18 +85,18 @@ install_at_socat() {
 	mkdir $SOCAT_AT_DIR
     cd $SOCAT_AT_DIR
     mkdir $SOCAT_AT_SYSD_DIR
-    wget --no-check-certificate http://gitea.hapyle.work:33000/taotao/webui/raw/development/socat-at-bridge/socat-armel-static
-    wget --no-check-certificate http://gitea.hapyle.work:33000/taotao/webui/raw/development/socat-at-bridge/killsmd7bridge
-    wget --no-check-certificate http://gitea.hapyle.work:33000/taotao/webui/raw/development/socat-at-bridge/atcmd
-	wget --no-check-certificate http://gitea.hapyle.work:33000/taotao/webui/raw/development/socat-at-bridge/atcmd11
+    wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/socat-at-bridge/socat-armel-static
+    wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/socat-at-bridge/killsmd7bridge
+    wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/socat-at-bridge/atcmd
+	wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/socat-at-bridge/atcmd11
     cd $SOCAT_AT_SYSD_DIR
-    wget --no-check-certificate http://gitea.hapyle.work:33000/taotao/webui/raw/development/socat-at-bridge/systemd_units/socat-smd11.service
-    wget --no-check-certificate http://gitea.hapyle.work:33000/taotao/webui/raw/development/socat-at-bridge/systemd_units/socat-smd11-from-ttyIN.service
-    wget --no-check-certificate http://gitea.hapyle.work:33000/taotao/webui/raw/development/socat-at-bridge/systemd_units/socat-smd11-to-ttyIN.service
-    wget --no-check-certificate http://gitea.hapyle.work:33000/taotao/webui/raw/development/socat-at-bridge/systemd_units/socat-killsmd7bridge.service	
-    wget --no-check-certificate http://gitea.hapyle.work:33000/taotao/webui/raw/development/socat-at-bridge/systemd_units/socat-smd7-from-ttyIN2.service
-    wget --no-check-certificate http://gitea.hapyle.work:33000/taotao/webui/raw/development/socat-at-bridge/systemd_units/socat-smd7-to-ttyIN2.service
-    wget --no-check-certificate http://gitea.hapyle.work:33000/taotao/webui/raw/development/socat-at-bridge/systemd_units/socat-smd7.service
+    wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/socat-at-bridge/systemd_units/socat-smd11.service
+    wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/socat-at-bridge/systemd_units/socat-smd11-from-ttyIN.service
+    wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/socat-at-bridge/systemd_units/socat-smd11-to-ttyIN.service
+    wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/socat-at-bridge/systemd_units/socat-killsmd7bridge.service	
+    wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/socat-at-bridge/systemd_units/socat-smd7-from-ttyIN2.service
+    wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/socat-at-bridge/systemd_units/socat-smd7-to-ttyIN2.service
+    wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/socat-at-bridge/systemd_units/socat-smd7.service
 
     # Set execute permissions
     cd $SOCAT_AT_DIR
