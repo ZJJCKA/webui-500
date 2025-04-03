@@ -5,7 +5,7 @@ CONFIG_FILE="/usrdata/simpleupdates/simpleupdate.conf"
 GITUSER="iamromulan"
 GITTREE="main"
 DIRECTORIES=("simpleadmin" "socat-at-bridge" "simplefirewall" "tailscale" "ttyd")
-BASE_URL="https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE"
+BASE_URL="https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE"
 LOG_FILE="/tmp/simpleupdate.log"
 
 # Load configuration
