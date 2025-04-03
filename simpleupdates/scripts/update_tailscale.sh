@@ -85,8 +85,8 @@ install_update_tailscale() {
         rm -rf /usrdata/tailscale_1.70.0_arm
         echo "Downloading systemd files..."
         cd "$TAILSCALE_SYSD_DIR"
-        wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/tailscale/systemd/tailscaled.service
-        wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/tailscale/systemd/tailscaled.defaults
+        wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/tailscale/systemd/tailscaled.service
+        wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/tailscale/systemd/tailscaled.defaults
         sleep 2s
         echo "Setting Permissions..."
         chmod +x "$TAILSCALE_DIR/tailscaled" "$TAILSCALE_DIR/tailscale"
