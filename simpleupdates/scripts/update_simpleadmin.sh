@@ -110,8 +110,8 @@ install_lighttpd() {
     systemctl stop lighttpd
     echo -e "\033[0;32mInstalling/Updating Lighttpd...\033[0m"
     mkdir -p "$SIMPLE_ADMIN_DIR"
-    wget -O "$SIMPLE_ADMIN_DIR/lighttpd.conf" https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/lighttpd.conf
-    wget -O "/lib/systemd/system/lighttpd.service" https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/systemd/lighttpd.service
+    wget -O "$SIMPLE_ADMIN_DIR/lighttpd.conf" https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/lighttpd.conf
+    wget -O "/lib/systemd/system/lighttpd.service" https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/systemd/lighttpd.service
     ln -sf "/lib/systemd/system/lighttpd.service" "/lib/systemd/system/multi-user.target.wants/"
     echo "www-data ALL = (root) NOPASSWD: /usr/sbin/iptables, /usr/sbin/ip6tables, /usrdata/simplefirewall/ttl-override, /bin/echo, /bin/cat" > /opt/etc/sudoers.d/www-data
 
@@ -139,57 +139,57 @@ echo -e "\e[1;31m2) Installing simpleadmin from the $GITTREE branch\e[0m"
 			mkdir $SIMPLE_ADMIN_DIR/www/css
     		mkdir $SIMPLE_ADMIN_DIR/www/js
             cd $SIMPLE_ADMIN_DIR/systemd
-            wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/systemd/lighttpd.service
+            wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/systemd/lighttpd.service
 			sleep 1
 			cd $SIMPLE_ADMIN_DIR/script
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/script/ttl_script.sh
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/script/remove_watchcat.sh
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/script/create_watchcat.sh
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/script/ttl_script.sh
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/script/remove_watchcat.sh
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/script/create_watchcat.sh
 			sleep 1
 			cd $SIMPLE_ADMIN_DIR/console
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/console/.profile
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/console/.profile
 			sleep 1
 			cd $SIMPLE_ADMIN_DIR/console/menu
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/console/menu/start_menu.sh
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/console/menu/start_menu.sh
 			ln -f $SIMPLE_ADMIN_DIR/console/menu/start_menu.sh /usrdata/root/bin/menu
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/console/menu/sfirewall_settings.sh
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/console/menu/start_menu.sh
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/console/menu/LAN_settings.sh
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/console/menu/sfirewall_settings.sh
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/console/menu/start_menu.sh
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/console/menu/LAN_settings.sh
 			sleep 1
 			cd $SIMPLE_ADMIN_DIR/www
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/deviceinfo.html
-   			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/favicon.ico
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/index.html
-    		wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/network.html
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/settings.html
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/sms.html
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/scanner.html
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/watchcat.html
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/deviceinfo.html
+   			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/favicon.ico
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/index.html
+    		wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/network.html
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/settings.html
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/sms.html
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/scanner.html
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/watchcat.html
 			sleep 1
 			cd $SIMPLE_ADMIN_DIR/www/js
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/js/alpinejs.min.js
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/js/bootstrap.bundle.min.js
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/js/dark-mode.js
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/js/generate-freq-box.js
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/js/parse-settings.js
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/js/populate-checkbox.js
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/js/alpinejs.min.js
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/js/bootstrap.bundle.min.js
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/js/dark-mode.js
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/js/generate-freq-box.js
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/js/parse-settings.js
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/js/populate-checkbox.js
     		sleep 1
     		cd $SIMPLE_ADMIN_DIR/www/css
-    		wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/css/bootstrap.min.css
-      		wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/css/styles.css
+    		wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/css/bootstrap.min.css
+      		wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/css/styles.css
 			sleep 1
 			cd $SIMPLE_ADMIN_DIR/www/cgi-bin
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/cgi-bin/get_atcommand
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/cgi-bin/user_atcommand
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/cgi-bin/get_ping
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/cgi-bin/get_sms
-    		wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/cgi-bin/get_ttl_status
-      		wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/cgi-bin/set_ttl
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/cgi-bin/send_sms
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/cgi-bin/get_uptime
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/cgi-bin/get_watchcat_status
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/cgi-bin/set_watchcat
-			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui/$GITTREE/simpleadmin/www/cgi-bin/watchcat_maker
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/cgi-bin/get_atcommand
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/cgi-bin/user_atcommand
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/cgi-bin/get_ping
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/cgi-bin/get_sms
+    		wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/cgi-bin/get_ttl_status
+      		wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/cgi-bin/set_ttl
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/cgi-bin/send_sms
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/cgi-bin/get_uptime
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/cgi-bin/get_watchcat_status
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/cgi-bin/set_watchcat
+			wget https://ghfast.top/https://raw.githubusercontent.com/$GITUSER/webui-500/$GITTREE/simpleadmin/www/cgi-bin/watchcat_maker
 			sleep 1
 			cd /
             chmod +x $SIMPLE_ADMIN_DIR/www/cgi-bin/*
@@ -206,10 +206,10 @@ echo -e "\e[1;31m2) Installing simpleadmin from the $GITTREE branch\e[0m"
 install_ttyd() {
     echo -e "\e[1;34mStarting ttyd installation process...\e[0m"
     cd $SIMPLE_ADMIN_DIR/console
-    curl -L -o ttyd http://gitea.hapyle.work:33000/taotao/webui/raw/development/ttyd.armhf && chmod +x ttyd
-    wget --no-check-certificate "http://gitea.hapyle.work:33000/taotao/webui/raw/development/simpleadmin/console/ttyd.bash" && chmod +x ttyd.bash
+    curl -L -o ttyd http://gitea.hapyle.work:33000/taotao/webui-500/raw/development/ttyd.armhf && chmod +x ttyd
+    wget --no-check-certificate "http://gitea.hapyle.work:33000/taotao/webui-500/raw/development/simpleadmin/console/ttyd.bash" && chmod +x ttyd.bash
     cd $SIMPLE_ADMIN_DIR/systemd/
-	wget --no-check-certificate "http://gitea.hapyle.work:33000/taotao/webui/raw/development/simpleadmin/systemd/ttyd.service"
+	wget --no-check-certificate "http://gitea.hapyle.work:33000/taotao/webui-500/raw/development/simpleadmin/systemd/ttyd.service"
     cp -f $SIMPLE_ADMIN_DIR/systemd/ttyd.service /lib/systemd/system/
     ln -sf /usrdata/simpleadmin/ttyd /bin
     
